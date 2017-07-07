@@ -65,8 +65,7 @@ public class GamePanel extends JPanel{
 	
 		
 		for (Klub k: klubovi){
-			System.out.println(k.getNazivKluba());
-			//homeBox.addItem(k);
+			homeBox.addItem(k);
 		}
 		Klub k = (Klub) homeBox.getSelectedItem();
 		System.out.println(k);
