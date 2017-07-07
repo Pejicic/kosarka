@@ -1,0 +1,6 @@
+insert into TRENER (idtr, ime, prz, idkl, god, drz) values(2, 'Dimitris', 'Itoudis', 'CSKA', 1970, 'GRC')
+insert into TRENER (idtr, ime, prz, idkl, god, drz) values(1, 'Dejan', 'Radonjic', 'CZV', 1970, 'MNE')
+insert into TRENER (idtr, ime, prz, idkl, god, drz) values(3, 'Jasmin', 'Repesa', 'EA7', 1961, 'HRV')
+insert into TRENER (idtr, ime, prz, idkl, god, drz) values(4, 'Georgios', 'Bartzokaz', 'BARCA', 1965, 'GRC')
+insert into TRENER (idtr, ime, prz, idkl, god, drz) values(5, 'Zeljko', 'Obradovic', 'FENER', 1960, 'SRB')
+insert into TRENER (idtr, ime, prz, idkl, god, drz) values(6, 'Giannis', 'Sfairopoulos', 'OLY', 1967, 'GRC')

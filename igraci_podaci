@@ -1,0 +1,49 @@
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CS1', 'Nando', 'De Colo', 1987, 'G', 'FRA', 196,'CSKA', 1 );
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CS2', 'James', 'Augustine', 1984, 'F', 'USA', 208,'CSKA', 5 );
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('ÇS3', 'Vitaly', 'Fridzon', 1985, 'G', 'RUS', 195,'CSKA', 7);
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CS4', 'Dmitry', 'Kulagin', 1992, 'G', 'RUS', 197,'CSKA', 3 );
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CS5', 'Semen', 'Antonov', 1989, 'F', 'RUS', 202,'CSKA', 11);
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CS6', 'Ivan', 'Lazarev', 1991, 'C', 'RUS', 210,'CSKA', 13 );
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CS7', 'Andrey', 'Vorontsevich', 1987, 'F', 'RUS', 207,'CSKA', 20 );
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CS8', 'Milos', 'Teodosic', 1987, 'G', 'SRB', 195,'CSKA', 4 );
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CS9', 'Cory', 'Higgins', 1989, 'G', 'USA', 196,'CSKA', 22 );
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CS10', 'Mikhail', 'Kulagin', 1994, 'G', 'RUS', 191,'CSKA', 30 );
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CS11', 'Nikita', 'Kurbanov', 1986, 'F', 'RUS', 202,'CSKA', 41);
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CS12', 'Kyle', 'Hines', 1986, 'C', 'USA', 198,'CSKA', 42 );
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CS13', 'Aaron', 'Jackson', 1986, 'G', 'USA', 190,'CSKA', 9 );
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CS14', 'Pavel', 'Korobkov', 1990, 'F', 'RUS', 206,'CSKA', 12);
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CS15', 'Joel', 'Freeland', 1986, 'C', 'UK', 210,'CSKA', 19 );
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CS16', 'Victor', 'Khryapa', 1982, 'F', 'RUS', 203,'CSKA', 31);
+
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('FE1', 'Baris', 'Hersek', 1988, 'G', 'TUR', 208,'FENER', 5);
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('FE2', 'Ekpe', 'Udoh', 1987, 'C', 'USA', 208,'FENER', 8 );
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('FE3', 'Melih', 'Mahmutoglu', 1990, 'C', 'TUR', 191,'FENER', 10);
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('FE4', 'Pero', 'Antic', 1982, 'C', 'MKD', 211,'FENER', 12 );
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('FE5', 'Bogdan', 'Bogdanovic', 1992, 'C', 'SRB', 197,'FENER', 13 );
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('FE6', 'Kostas', 'Sloukas', 1990, 'C', 'GRC', 190,'FENER', 16);
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('FE7', 'Egehan', 'Arna', 1997, 'G', 'TUR', 203,'FENER', 18 );
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('FE8', 'James', 'Nunnally', 1990, 'G', 'USA', 201,'FENER', 21 );
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('FE9', 'Jan', 'Vesely', 1990, 'G', 'CZE', 213,'FENER', 24);
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('FE10', 'Nikola', 'Kalinic', 1991, 'G', 'SRB', 202,'FENER', 33);
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('FE11', 'Bobby', 'Dixon', 1983, 'C', 'USA', 178,'FENER', 35);
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('FE12', 'Ahmet', 'Duverioglu', 1993, 'C', 'TUR', 209,'FENER', 44);
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('FE13', 'Luigi', 'Datome', 1987, 'G', 'ITA', 203,'FENER', 70 );
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('FE14', 'Anthony', 'Bennett', 1993, 'G', 'CAN', 203,'FENER', 15 );
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('FE15', 'Berk', 'Ugurlu', 1996, 'C', 'TUR', 192,'FENER', 23 );
+
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CZ1', 'Nate', 'Wolters', 1991, 'G', 'USA', 193,'CZV', 0);
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CZ2', 'Deon', 'Thompson', 1988, 'F', 'USA', 203,'CZV', 2);
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CZ3', 'Nemanja', 'Dangubic', 1993, 'F', 'SRB', 204,'CZV',6 );
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CZ4', 'Branko', 'Lazic', 1989, 'G', 'SRB', 194,'CZV', 10);
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CZ5', 'Borisa', 'Simanic', 1998, 'F', 'SRB', 209,'CZV', 12 );
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CZ6', 'Ognjen', 'Dobric', 1995, 'F', 'SRB', 200,'CZV', 13 );
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CZ7', 'Marko', 'Guduric', 1995, 'G', 'SRB', 196,'CZV', 23);
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CZ8', 'Stefan', 'Jovic', 1990, 'G', 'SRB', 198,'CZV', 24);
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CZ9', 'Ognjen', 'Kuzmic', 1990, 'C', 'BIH', 214,'CZV', 32 );
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CZ10', 'Milko', 'Bjelica', 1984, 'F', 'MNE', 207,'CZV', 51);
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CZ11', 'Luka', 'Mitrovic', 1993, 'F', 'SRB', 204,'CZV', 9);
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CZ12', 'Marko', 'Simonovic', 1986, 'F', 'SRB', 203,'CZV', 19);
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CZ13', 'Petar', 'Rakicevic', 1995, 'G', 'SRB', 204,'CZV', 20 );
+insert into IGRAC(idigr, ime, prz, god, idpoz, drz, visina, idkl, brdresa) values('CZ14', 'Charles', 'Jenkins', 1989, 'G', 'SRB', 191,'CZV', 22);
+
+

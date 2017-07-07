@@ -1,0 +1,7 @@
+insert into klub (idkl, nazkl, idmes) values('CZV', 'CRVENA ZVEZDA MTS', 'BG');
+insert into klub (idkl, nazkl, idmes) values('CSKA', 'CSKA', 'MO');
+insert into klub (idkl, nazkl, idmes) values('EA7', 'EMPORIO ARMANI', 'MI');
+insert into klub (idkl, nazkl, idmes) values('BARCA', 'FC BARCELONA LASSA', 'BR');
+insert into klub (idkl, nazkl, idmes) values('FENER', 'FENERBAHCE DOGUS', 'IS');
+insert into klub (idkl, nazkl, idmes) values('OLY', 'OLYMPIACOS', 'PI');
+

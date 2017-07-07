@@ -1,7 +1,5 @@
 package model;
 
-import java.util.*;
-
 /** @pdOid eb3bd330-a409-45f7-838d-fe83b86e1c49 */
 public class Sudija extends Osoba {
    /** @pdRoleInfo migr=no name=Utakmica assc=association3 coll=java.util.Collection impl=java.util.HashSet mult=1..* */
