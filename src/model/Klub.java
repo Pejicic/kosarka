@@ -43,7 +43,9 @@ public class Klub {
 		this.timskaStatistika = timskaStatistika;
 		this.trener = trener;
 	}
-
+	public Klub(String nazivKluba){
+		this.nazivKluba = nazivKluba;
+	}
 	public String getNazivKluba() {
 		return nazivKluba;
 	}

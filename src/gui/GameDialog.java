@@ -2,6 +2,7 @@ package gui;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.Image;
+import java.sql.SQLException;
 
 import javax.swing.*;
 
@@ -11,7 +12,7 @@ public class GameDialog extends JDialog{
 	private JPanel panel;
 	private JButton play;
 	
-	public GameDialog(){
+	public GameDialog() throws SQLException{
 		
 		setSize(500,400);
 		setLocation(400,200);

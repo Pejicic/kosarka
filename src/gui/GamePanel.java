@@ -2,18 +2,23 @@ package gui;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.swing.*;
 
+import model.Database;
+import model.Klub;
+import sun.security.krb5.internal.tools.Klist;
+
 public class GamePanel extends JPanel{
 	
 	private JLabel homeTeam;
-	private JComboBox<Tim> homeBox;
+	private JComboBox<Klub> homeBox;
 	private JButton homeButton;
 	
 	private JLabel guestTeam;
-	private JComboBox<Tim> guestBox;
+	private JComboBox<Klub> guestBox;
 	private JButton guestButton;
 	
 	private JButton judge;
@@ -30,11 +35,11 @@ public class GamePanel extends JPanel{
 	private JLabel hala;
 	private JComboBox halaBox;
 	
-	public GamePanel (){
+	public GamePanel () throws SQLException{
 		initialize();
 	}
 	
-	public void initialize (){
+	public void initialize () throws SQLException{
 		
 		setLayout(new BorderLayout());
 		
@@ -47,14 +52,24 @@ public class GamePanel extends JPanel{
 		homeTeam= new JLabel("Home team: ");
 		homeTeam.setPreferredSize(dim);
 		
-		ArrayList<Tim> timovi= List.getKlubovi();
-		homeBox= new JComboBox<Tim>();
+		ArrayList<Klub> klubovi = new ArrayList<Klub>();
+		homeBox= new JComboBox<Klub>();
 		
-		for (Tim tim: timovi){
-			homeBox.addItem(tim);
+		Database.rs = Database.st.executeQuery("select nazkl from klub");
+		
+		while(Database.rs.next()){
+			String name = Database.rs.getString(1);
+			Klub k = new Klub(name);
+			klubovi.add(k);
 		}
-		Tim tim = (Tim) homeBox.getSelectedItem();
-		System.out.println(tim);
+	
+		
+		for (Klub k: klubovi){
+			System.out.println(k.getNazivKluba());
+			//homeBox.addItem(k);
+		}
+		Klub k = (Klub) homeBox.getSelectedItem();
+		System.out.println(k);
 				
 		homeBox.setPreferredSize(dim);
 		homeButton= new JButton("Home players ");
@@ -68,14 +83,11 @@ public class GamePanel extends JPanel{
 		JPanel panGuest =new JPanel(new FlowLayout(FlowLayout.LEFT));
 		guestTeam= new JLabel("Guest team: ");
 		guestTeam.setPreferredSize(dim);
-		guestBox= new JComboBox<Tim>();
+		guestBox= new JComboBox<Klub>();
 		guestBox.setPreferredSize(dim);
 		
-		for (Tim t: timovi){
-			if (t==tim)
-				continue;
-			else
-				guestBox.addItem(tim);
+		for (Klub k1: klubovi){
+			guestBox.addItem(k1);
 		}
 		
 		guestButton= new JButton("Guest players ");

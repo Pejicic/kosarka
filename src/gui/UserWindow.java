@@ -1,7 +1,11 @@
 package gui;
 import java.awt.*;
 import java.awt.event.*;
+import java.sql.SQLException;
+
 import javax.swing.*;
+
+import model.Aplikacija;
 
 /*Klasa za kreiranje prozora za log in */
 
@@ -87,7 +91,13 @@ public class UserWindow extends JFrame {
 				
 				String name = fieldName.getText();
 				String pass = new String(fieldPass.getPassword());
-				boolean check = list.checkUser(name, pass);
+				boolean check = false;
+				try {
+					check = Aplikacija.login(name, pass);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				if (check){
 					StartWindow sw= new StartWindow();
 					sw.setVisible(true);

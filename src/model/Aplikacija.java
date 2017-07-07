@@ -1,9 +1,14 @@
 package model;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Collection;
+
+import gui.Main;
 
 /** @pdOid 666160ba-e392-4a91-8998-e93bf3b6176e */
 public class Aplikacija {
+
 	/**
 	 * @pdRoleInfo migr=no name=Hala assc=association11
 	 *             coll=java.util.Collection impl=java.util.HashSet mult=1..*
@@ -92,9 +97,24 @@ public class Aplikacija {
 		// TODO: implement
 	}
 
-	/** @pdOid 4fe38d40-40d7-4e27-9ca0-e1001e278ffb */
-	public void login() {
+	/** @throws SQLException 
+	 * @pdOid 4fe38d40-40d7-4e27-9ca0-e1001e278ffb */
+	public static boolean login(String username, String password) throws SQLException {
+		ResultSet rs = Database.st.executeQuery("select * from korisnici where username = '" + username + "' and pass = '" + password +  "' ");
+		
+		int count = 0;
+		while(rs.next()){
+			count += 1;
+		}
+		rs.close();
+		if(count == 1) {
+			return true;
+		}else {
+			return false;
+		}
+		
 		// TODO: implement
+		
 	}
 
 	/**
