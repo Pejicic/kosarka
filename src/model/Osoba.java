@@ -1,28 +1,29 @@
 package model;
+
 import java.util.*;
+
 public class Osoba {
-	
-private String ime;
-	
-private String prezime;
-	  
-private String drzavljanstvo;
-	  
-private int godiste;
 
-	   public Osoba(String ime, String prezime, String drzavljanstvo, int godiste) {
-	super();
-	this.ime = ime;
-	this.prezime = prezime;
-	this.drzavljanstvo = drzavljanstvo;
-	this.godiste = godiste;
-}
+	private String ime;
 
-	   
-	public Osoba() {
-		super();
+	private String prezime;
+
+	private String drzavljanstvo;
+
+	private int godiste;
+
+	
+	public Osoba(String ime, String prezime, String drzavljanstvo, int godiste) {
+		this();
+		this.ime = ime;
+		this.prezime = prezime;
+		this.drzavljanstvo = drzavljanstvo;
+		this.godiste = godiste;
 	}
 
+	public Osoba() {
+		
+	}
 
 	public String getIme() {
 		return ime;
@@ -55,9 +56,5 @@ private int godiste;
 	public void setGodiste(int godiste) {
 		this.godiste = godiste;
 	}
-
-	
-
-	
 
 }
