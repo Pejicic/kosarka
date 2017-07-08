@@ -2,6 +2,8 @@ package gui;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -11,14 +13,14 @@ import model.Database;
 import model.Klub;
 import sun.security.krb5.internal.tools.Klist;
 
-public class GamePanel extends JPanel{
+public class GamePanel extends JPanel implements ActionListener{
 	
 	private JLabel homeTeam;
-	private JComboBox<Klub> homeBox;
+	private JComboBox<String> homeBox;
 	private JButton homeButton;
 	
 	private JLabel guestTeam;
-	private JComboBox<Klub> guestBox;
+	private JComboBox<String> guestBox;
 	private JButton guestButton;
 	
 	private JButton judge;
@@ -34,6 +36,8 @@ public class GamePanel extends JPanel{
 	
 	private JLabel hala;
 	private JComboBox halaBox;
+	
+	private ArrayList<String> nazKlubovi;
 	
 	public GamePanel () throws SQLException{
 		initialize();
@@ -52,23 +56,26 @@ public class GamePanel extends JPanel{
 		homeTeam= new JLabel("Home team: ");
 		homeTeam.setPreferredSize(dim);
 		
-		ArrayList<Klub> klubovi = new ArrayList<Klub>();
-		homeBox= new JComboBox<Klub>();
+		nazKlubovi = new ArrayList<String>(); //lista sadrzi nazive klubova
+		homeBox= new JComboBox<String>();
 		
 		Database.rs = Database.st.executeQuery("select nazkl from klub");
 		
 		while(Database.rs.next()){
-			String name = Database.rs.getString(1);
-			Klub k = new Klub(name);
-			klubovi.add(k);
+			if (Database.rs.getString(1) != null){
+				String name = Database.rs.getString(1);
+				Klub k = new Klub(name);
+				nazKlubovi.add(k.getNazivKluba());
+			}
 		}
 	
 		
-		for (Klub k: klubovi){
+		for (String k: nazKlubovi){
 			homeBox.addItem(k);
 		}
-		Klub k = (Klub) homeBox.getSelectedItem();
-		System.out.println(k);
+		
+		homeBox.addActionListener(this);
+		
 				
 		homeBox.setPreferredSize(dim);
 		homeButton= new JButton("Home players ");
@@ -82,10 +89,15 @@ public class GamePanel extends JPanel{
 		JPanel panGuest =new JPanel(new FlowLayout(FlowLayout.LEFT));
 		guestTeam= new JLabel("Guest team: ");
 		guestTeam.setPreferredSize(dim);
-		guestBox= new JComboBox<Klub>();
+		guestBox= new JComboBox<String>();
 		guestBox.setPreferredSize(dim);
 		
-		for (Klub k1: klubovi){
+		
+		for(String k : nazKlubovi){
+			System.out.println(k);
+		}
+		
+		for (String k1: nazKlubovi){
 			guestBox.addItem(k1);
 		}
 		
@@ -135,6 +147,16 @@ public class GamePanel extends JPanel{
 		
 		
 		add(box,BorderLayout.CENTER);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		JComboBox cb = (JComboBox)e.getSource();
+		String nazK = (String)cb.getSelectedItem();
+		System.out.println(nazK);
+		nazKlubovi.remove(nazKlubovi.indexOf(nazK));
+		
 	}
 
 }
