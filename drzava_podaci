@@ -1,0 +1,27 @@
+insert into drzava values ('SRB', 'SERBIA');
+insert into drzava values ('TUR', 'TURKEY');
+insert into drzava values ('MKD', 'MACEDONIA');
+insert into drzava values ('GRC', 'GREECE');
+insert into drzava values ('USA', 'UNITED STATES OF AMERICA');
+insert into drzava values ('CZE', 'CZECH REPUBLIC');
+insert into drzava values ('ITA', 'ITALY');
+insert into drzava values ('AUS', 'AUSTRALIA');
+insert into drzava values ('BIH', 'BOSINA AND HERZEGOVINA');
+insert into drzava values ('MNE', 'MONTENEGRO');
+insert into drzava values ('RUS', 'RUSSIAN FEDERATION');
+insert into drzava values ('LTU', 'LITHUANIA');
+insert into drzava values ('SVN', 'SLOVENIA');
+insert into drzava values ('HRV', 'CROATIA');
+insert into drzava values ('FRA', 'FRANCE');
+insert into drzava values ('ESP', 'SPAIN');
+insert into drzava values ('SWE', 'SWEDEN');
+insert into drzava values ('BGR', 'BULGARIA');
+insert into drzava values ('SEN', 'SENEGAL');
+insert into drzava values ('FIN', 'FINLAND');
+insert into drzava values ('LVA', 'LATVIA');
+insert into drzava values ('CAN', 'CANADA');
+insert into drzava values ('DEU', 'GERMANY');
+insert into drzava values ('PRT', 'PORTUGAL');
+insert into drzava values ('UKR', 'UKRAINE');
+insert into drzava values ('UK', 'UNITED KINGDOM');
+
