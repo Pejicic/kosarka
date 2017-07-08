@@ -40,7 +40,7 @@ CREATE TABLE SUD_DEL(
 	IME VARCHAR2(30) NOT NULL,
 	PRZ VARCHAR2(40) NOT NULL,
 	DRZ VARCHAR2(3) NOT NULL,
-	GOD DATE NOT NULL,
+	GOD NUMBER NOT NULL,
 	
 	CONSTRAINT SUD_DEL_PK PRIMARY KEY (ID),
 	CONSTRAINT SUD_DEL_FK1 FOREIGN KEY (IDULOGA) REFERENCES ULOGA(IDUL),
@@ -60,7 +60,7 @@ CREATE TABLE TRENER(
 	IDTR NUMBER NOT NULL, 
 	IME VARCHAR2(40) NOT NULL,
 	PRZ VARCHAR2(50) NOT NULL,
-	GOD DATE NOT NULL, 
+	GOD NUMBER NOT NULL, 
 	IDKL VARCHAR2(5) NOT NULL, 
 	DRZ VARCHAR2(3) NOT NULL,
 	
@@ -271,5 +271,5 @@ create table korisnici (
 	pass varchar2(30) not null, 
 	
 	constraint korisnici_pk primary key (idk),
-	constraint korisnici_un unigue(username)
+	constraint korisnici_un unique(username)
 );
