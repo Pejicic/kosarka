@@ -2,6 +2,7 @@ package gui;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
+import java.text.ParseException;
 
 import javax.swing.*;
 
@@ -42,6 +43,9 @@ public class StartWindow extends JFrame{
 					gd = new GameDialog();
 					gd.setVisible(true);
 				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (ParseException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}

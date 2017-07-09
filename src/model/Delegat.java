@@ -7,6 +7,12 @@ public class Delegat extends Osoba {
 
 	public Delegat() {
 	}
+	
+	public Delegat(String ime, String prezime){
+		super(ime, prezime);
+	}
+	
+	
 
 	public Delegat(String ime, String prezime, String drzavljanstvo, int godiste, Utakmica[] utakmica) {
 		super(ime, prezime, drzavljanstvo, godiste);

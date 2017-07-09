@@ -12,6 +12,11 @@ public class Osoba {
 
 	private int godiste;
 
+	public Osoba(String ime, String prz){
+		this();
+		this.ime = ime;
+		this.prezime = prz;
+	}
 	
 	public Osoba(String ime, String prezime, String drzavljanstvo, int godiste) {
 		this();

@@ -5,7 +5,7 @@ import java.util.*;
 /** @pdOid 0e57f300-af14-4876-9e69-b3828444e1f5 */
 public class Utakmica {
 	/** @pdOid ff59f990-a7b6-43f7-a8a1-450766d9b00f */
-	private Date datum;
+	private String datum;
 	/** @pdOid 684f08a7-7f96-471c-b2b1-6eec8bd905a7 */
 	private String vremePocetka;
 	/** @pdOid 589eb545-b75e-4d64-9142-3a36bb5b752d */
@@ -20,17 +20,28 @@ public class Utakmica {
 	 */
 	public StatistikaUtakmice statistikaUtakmice;
 	/** @pdRoleInfo migr=no name=Sudija assc=association3 mult=3 side=A */
-	public Sudija[] sudija;
+	public ArrayList<Sudija> sudija;
 	/** @pdRoleInfo migr=no name=Klub assc=association5 mult=1..1 side=A */
 	public Klub gosti;
+	public Klub domacin;
 	/** @pdRoleInfo migr=no name=Hala assc=association9 mult=1..1 side=A */
 	public Hala hala;
 
 	public Utakmica() {
 	}
 
-	public Utakmica(Date datum, String vremePocetka, int cetvrtina, Delegat delegat, StanjeUtakmice aktivno,
-			StatistikaUtakmice statistikaUtakmice, Sudija[] sudija, Klub gosti, Hala hala) {
+	public Utakmica(String datum, String vremePocetka, Delegat del, ArrayList<Sudija> sudija, Klub gosti, Klub domacin, Hala hala ){
+		this();
+		this.datum = datum;
+		this.vremePocetka = vremePocetka;
+		this.delegat = del;
+		this.sudija = sudija;
+		this.gosti = gosti;
+		this.hala = hala;
+		this.domacin = domacin;
+	}
+	public Utakmica(String datum, String vremePocetka, int cetvrtina, Delegat delegat, StanjeUtakmice aktivno,
+			StatistikaUtakmice statistikaUtakmice, ArrayList<Sudija> sudija, Klub gosti, Klub domacin, Hala hala) {
 		this();
 		this.datum = datum;
 		this.vremePocetka = vremePocetka;
@@ -41,13 +52,24 @@ public class Utakmica {
 		this.sudija = sudija;
 		this.gosti = gosti;
 		this.hala = hala;
+		this.domacin = domacin;
 	}
 
-	public Date getDatum() {
+	public String getDatum() {
 		return datum;
 	}
+	
+	
 
-	public void setDatum(Date datum) {
+	public Klub getDomacin() {
+		return domacin;
+	}
+
+	public void setDomacin(Klub domacin) {
+		this.domacin = domacin;
+	}
+
+	public void setDatum(String datum) {
 		this.datum = datum;
 	}
 
@@ -91,11 +113,11 @@ public class Utakmica {
 		this.statistikaUtakmice = statistikaUtakmice;
 	}
 
-	public Sudija[] getSudija() {
+	public ArrayList<Sudija> getSudija() {
 		return sudija;
 	}
 
-	public void setSudija(Sudija[] sudija) {
+	public void setSudija(ArrayList<Sudija> sudija) {
 		this.sudija = sudija;
 	}
 

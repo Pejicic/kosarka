@@ -3,6 +3,7 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.Image;
 import java.sql.SQLException;
+import java.text.ParseException;
 
 import javax.swing.*;
 
@@ -12,7 +13,7 @@ public class GameDialog extends JDialog{
 	private JPanel panel;
 	private JButton play;
 	
-	public GameDialog() throws SQLException{
+	public GameDialog() throws SQLException, ParseException{
 		
 		setSize(500,400);
 		setLocation(400,200);
@@ -22,7 +23,7 @@ public class GameDialog extends JDialog{
 		panel.setLayout(new FlowLayout(FlowLayout.RIGHT));
 		
 		play = new JButton ();
-		ImageIcon icon = new ImageIcon("images/play.png");
+		ImageIcon icon = new ImageIcon("play.png");
 		Image img = icon.getImage();
 		Image newimg = img.getScaledInstance(25, 30, java.awt.Image.SCALE_SMOOTH);
 		icon = new ImageIcon(newimg); 

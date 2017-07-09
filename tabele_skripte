@@ -101,14 +101,14 @@ CREATE TABLE KVADRANT(
 	CONSTRAINT KVADRANT_PK PRIMARY KEY (IDKV)
 );
 
---ZA CETVRTINE STAVITI OGRANICENJE DA NE MOZE DA SE UNESE BROJ VECI OD 4
+
 
 CREATE TABLE UTAKMICA(
 	IDUTK VARCHAR2(3) NOT NULL, 
 	DOMACI VARCHAR2(5) NOT NULL, 
 	GOSTI VARCHAR2(5) NOT NULL, 
 	HALA VARCHAR2(2) NOT NULL, 
-	DATUM DATE NOT NULL, 
+	DATUM VARCHAR2(16) NOT NULL, 
 	VREME VARCHAR2(5) NOT NULL, 
 	SUD1 NUMBER NOT NULL, 
 	SUD2 NUMBER NOT NULL, 
@@ -200,7 +200,7 @@ create table stat_sut(
 	constraint stat_sut_fk3 foreign key (idkv) references kvadrant(idkv)
 );
 
-create table stat_izgubljenjelopte(
+create table stat_izgubljenelopte(
 	idstizl varchar2(10) not null,
 	idstatigr varchar2(4) not null,
 	idiz varchar2(3) not null, 
