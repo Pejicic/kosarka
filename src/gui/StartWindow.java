@@ -42,6 +42,7 @@ public class StartWindow extends JFrame{
 				try {
 					gd = new GameDialog();
 					gd.setVisible(true);
+					dispose();
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

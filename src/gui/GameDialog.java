@@ -10,6 +10,11 @@ import java.text.ParseException;
 
 import javax.swing.*;
 
+import model.Hala;
+import model.Klub;
+import model.Sudija;
+import model.Utakmica;
+
 public class GameDialog extends JDialog{
 
 	private GamePanel gp;
@@ -33,21 +38,42 @@ public class GameDialog extends JDialog{
 		play.setIcon(icon);
 		play.setToolTipText("Play");
 		panel.add(play);
+		add(panel,BorderLayout.SOUTH);
+		gp= new GamePanel();
+		add(gp,BorderLayout.CENTER);
 		
+
 		play.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent ev) {
+				
+				makeGame();
 				GameWindow gw;
 				try {
-					gw = new GameWindow();
+					gw = new GameWindow(gp.getNovaUtakmica());
 					gw.setVisible(true);
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
 				dispose();
 				
-		}});;
-		add(panel,BorderLayout.SOUTH);
-		gp= new GamePanel();
-		add(gp,BorderLayout.CENTER);
+		}});
+	}
+	
+	public void makeGame(){
+		
+		String token[] = gp.getIzabranis1().split(" ");
+		Sudija s1 = new Sudija(token[0].trim(), token[1].trim());
+		gp.getIzabraniSudija().add(s1);
+		String tokens[] = gp.getIzabranis2().split(" ");
+		Sudija s2 = new Sudija(tokens[0].trim(), tokens[1].trim());
+		gp.getIzabraniSudija().add(s2);
+		String tokens1[] = gp.getIzabranis3().split(" ");
+		Sudija s3 = new Sudija(tokens1[0].trim(), tokens1[1].trim());
+		gp.getIzabraniSudija().add(s3);
+		Klub klubG = new Klub(gp.getKlubGuest());
+		Klub klubD = new Klub(gp.getKlubHome());
+		Hala hala = new Hala(gp.getIzabranaHala());
+		gp.setNovaUtakmica ( new Utakmica(gp.getIzabraniDatum(), gp.getIzabranoVreme(), 
+				gp.getIzabraniDelegat(), gp.getIzabraniSudija(), klubG, klubD, hala));
 	}
 }

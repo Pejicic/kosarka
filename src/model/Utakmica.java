@@ -40,6 +40,7 @@ public class Utakmica {
 		this.hala = hala;
 		this.domacin = domacin;
 	}
+	
 	public Utakmica(String datum, String vremePocetka, int cetvrtina, Delegat delegat, StanjeUtakmice aktivno,
 			StatistikaUtakmice statistikaUtakmice, ArrayList<Sudija> sudija, Klub gosti, Klub domacin, Hala hala) {
 		this();
@@ -184,5 +185,12 @@ public class Utakmica {
 	public void odabirDelegataISudija() {
 		// TODO: implement
 	}
+
+	@Override
+	public String toString() {
+		return "Utakmica [datum=" + datum + ", vremePocetka=" + vremePocetka + ", delegat=" + delegat + ", sudija="
+				+ sudija + ", gosti=" + gosti + ", domacin=" + domacin + ", hala=" + hala + "]";
+	}
+	
 
 }

@@ -69,7 +69,7 @@ public class GamePanel extends JPanel {
 	private String izabranis3;
 	private String izabraniDatum;
 	private String izabranoVreme;
-	private ArrayList<Sudija> izabraniSudija;
+	private ArrayList<Sudija> izabraniSudija = new ArrayList<Sudija>();
 
 	private int num = 0; // pomoc oko preklapanja liste
 	private int nums1 = 0;
@@ -96,12 +96,23 @@ public class GamePanel extends JPanel {
 		initializeDelegate(dim, box);
 		initializeJugdes(dim, box);
 
+
+		/*String token[] = getIzabranis1().split(" ");
+		Sudija s1 = new Sudija(token[0].trim(), token[1].trim());
+		izabraniSudija.add(s1);
+		String tokens[] = getIzabranis2().split(" ");
+		Sudija s2 = new Sudija(tokens[0].trim(), tokens[1].trim());
+		izabraniSudija.add(s2);
+		String tokens1[] = getIzabranis3().split(" ");
+		Sudija s3 = new Sudija(tokens1[0].trim(), tokens1[1].trim());
+		izabraniSudija.add(s3);
+		Klub klubG = new Klub(getKlubGuest());
+		Klub klubD = new Klub(getKlubHome());
+		Hala hala = new Hala(getIzabranaHala());
+		novaUtakmica = new Utakmica(getIzabraniDatum(), getIzabranoVreme(), getIzabraniDelegat(), izabraniSudija, klubG, klubD, hala);*/
 		add(box, BorderLayout.CENTER);
 
-		Klub klubG = new Klub(klubGuest);
-		Klub klubD = new Klub(klubHome);
-		Hala hala = new Hala(izabranaHala);
-		novaUtakmica = new Utakmica(izabraniDatum, izabranoVreme, izabraniDelegat, izabraniSudija, klubG, klubD, hala);
+		
 	}
 
 	private void initializeJugdes(Dimension dim, Box box) throws SQLException {
@@ -135,22 +146,20 @@ public class GamePanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent ae) {
 				// TODO Auto-generated method stub
-				izabranis1 = (String) sud1.getSelectedItem();
-				String tokens[] = izabranis1.split(" ");
-				Sudija s1 = new Sudija(tokens[0].trim(), tokens[1].trim());
-				izabraniSudija.add(s1);
+				setIzabranis1((String) sud1.getSelectedItem());
+				
 				if (nums1 == 0) {
 					for (String k : sudije) {
 						sud2.addItem(k);
 					}
-					sud2.removeItem(izabranis1);
+					sud2.removeItem(getIzabranis1());
 					nums1++;
 				} else {
 					sud2.removeAllItems();
 					for (String k : sudije) {
 						sud2.addItem(k);
 					}
-					sud2.removeItem(izabranis1);
+					sud2.removeItem(getIzabranis1());
 					nums1++;
 				}
 			}
@@ -171,24 +180,22 @@ public class GamePanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				izabranis2 = (String) sud2.getSelectedItem();
-				String tokens[] = izabranis2.split(" ");
-				Sudija s2 = new Sudija(tokens[0].trim(), tokens[1].trim());
-				izabraniSudija.add(s2);
+				setIzabranis2((String) sud2.getSelectedItem());
+				
 				if (nums2 == 0) {
 					for (String s : sudije) {
 						sud3.addItem(s);
 					}
-					sud3.removeItem(izabranis2);
-					sud3.removeItem(izabranis1);
+					sud3.removeItem(getIzabranis1());
+					sud3.removeItem(getIzabranis2());
 					nums2++;
 				} else {
 					sud3.removeAllItems();
 					for (String s : sudije) {
 						sud3.addItem(s);
 					}
-					sud3.removeItem(izabranis2);
-					sud3.removeItem(izabranis1);
+					sud3.removeItem(getIzabranis2());
+					sud3.removeItem(getIzabranis1());
 					nums2++;
 				}
 			}
@@ -209,10 +216,8 @@ public class GamePanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				izabranis3 = (String) sud3.getSelectedItem();
-				String tokens[] = izabranis3.split(" ");
-				Sudija s3 = new Sudija(tokens[0].trim(), tokens[1].trim());
-				izabraniSudija.add(s3);
+				setIzabranis3( (String) sud3.getSelectedItem());
+				
 			}
 		});
 		;
@@ -252,7 +257,7 @@ public class GamePanel extends JPanel {
 				// TODO Auto-generated method stub
 				String izdel = (String) delBox.getSelectedItem();
 				String[] token = izdel.split(" ");
-				izabraniDelegat = new Delegat(token[0].trim(), token[1].trim());
+				setIzabraniDelegat(new Delegat(token[0].trim(), token[1].trim()));
 			}
 		});
 
@@ -286,8 +291,8 @@ public class GamePanel extends JPanel {
 		box.add(panHala);
 
 		halaBox.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent ev) {
-				izabranaHala = (String) halaBox.getSelectedItem();
+			public void actionPerformed(ActionEvent e) {
+				setIzabranaHala((String) halaBox.getSelectedItem());
 
 			}
 		});
@@ -301,8 +306,7 @@ public class GamePanel extends JPanel {
 		date.setPreferredSize(dim);
 		dateField = new JTextField();
 		dateField.setPreferredSize(dim);
-		DateFormat form = new SimpleDateFormat("DD-MM-YYYY");
-		izabraniDatum = dateField.getText();
+		setIzabraniDatum(dateField.getText());
 
 		System.out.println(izabraniDatum);
 		panDate.add(date);
@@ -314,7 +318,7 @@ public class GamePanel extends JPanel {
 		time.setPreferredSize(dim);
 		timeField = new JTextField();
 		timeField.setPreferredSize(dim);
-		izabranoVreme = timeField.getText();
+		setIzabranoVreme(timeField.getText());
 		panTime.add(time);
 		panTime.add(timeField);
 		box.add(panTime);
@@ -344,21 +348,21 @@ public class GamePanel extends JPanel {
 		}
 
 		homeBox.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent ev) {
+			public void actionPerformed(ActionEvent e) {
 
-				klubHome = (String) homeBox.getSelectedItem();
+				setKlubHome((String) homeBox.getSelectedItem());
 				if (num == 0) {
 					for (String k : nazKlubovi) {
 						guestBox.addItem(k);
 					}
-					guestBox.removeItem(klubHome);
+					guestBox.removeItem(getKlubHome());
 					num++;
 				} else {
 					guestBox.removeAllItems();
 					for (String k : nazKlubovi) {
 						guestBox.addItem(k);
 					}
-					guestBox.removeItem(klubHome);
+					guestBox.removeItem(getKlubHome());
 					num++;
 				}
 			}
@@ -379,8 +383,8 @@ public class GamePanel extends JPanel {
 		guestBox.setPreferredSize(dim);
 
 		guestBox.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent ev) {
-				klubGuest = (String) guestBox.getSelectedItem();
+			public void actionPerformed(ActionEvent e) {
+				setKlubGuest((String) guestBox.getSelectedItem());
 
 			}
 		});
@@ -399,4 +403,309 @@ public class GamePanel extends JPanel {
 		this.novaUtakmica = novaUtakmica;
 	}
 
+	public JLabel getHomeTeam() {
+		return homeTeam;
+	}
+
+	public void setHomeTeam(JLabel homeTeam) {
+		this.homeTeam = homeTeam;
+	}
+
+	public JComboBox<String> getHomeBox() {
+		return homeBox;
+	}
+
+	public void setHomeBox(JComboBox<String> homeBox) {
+		this.homeBox = homeBox;
+	}
+
+	public JButton getHomeButton() {
+		return homeButton;
+	}
+
+	public void setHomeButton(JButton homeButton) {
+		this.homeButton = homeButton;
+	}
+
+	public JLabel getGuestTeam() {
+		return guestTeam;
+	}
+
+	public void setGuestTeam(JLabel guestTeam) {
+		this.guestTeam = guestTeam;
+	}
+
+	public JComboBox<String> getGuestBox() {
+		return guestBox;
+	}
+
+	public void setGuestBox(JComboBox<String> guestBox) {
+		this.guestBox = guestBox;
+	}
+
+	public JButton getGuestButton() {
+		return guestButton;
+	}
+
+	public void setGuestButton(JButton guestButton) {
+		this.guestButton = guestButton;
+	}
+
+	public JLabel getTime() {
+		return time;
+	}
+
+	public void setTime(JLabel time) {
+		this.time = time;
+	}
+
+	public JTextField getTimeField() {
+		return timeField;
+	}
+
+	public void setTimeField(JTextField timeField) {
+		this.timeField = timeField;
+	}
+
+	public JLabel getDate() {
+		return date;
+	}
+
+	public void setDate(JLabel date) {
+		this.date = date;
+	}
+
+	public JTextField getDateField() {
+		return dateField;
+	}
+
+	public void setDateField(JTextField dateField) {
+		this.dateField = dateField;
+	}
+
+	public JLabel getDelegate() {
+		return delegate;
+	}
+
+	public void setDelegate(JLabel delegate) {
+		this.delegate = delegate;
+	}
+
+	public JComboBox<String> getDelBox() {
+		return delBox;
+	}
+
+	public void setDelBox(JComboBox<String> delBox) {
+		this.delBox = delBox;
+	}
+
+	public JLabel getHala() {
+		return hala;
+	}
+
+	public void setHala(JLabel hala) {
+		this.hala = hala;
+	}
+
+	public JComboBox<String> getHalaBox() {
+		return halaBox;
+	}
+
+	public void setHalaBox(JComboBox<String> halaBox) {
+		this.halaBox = halaBox;
+	}
+
+	public JLabel getJudges1() {
+		return judges1;
+	}
+
+	public void setJudges1(JLabel judges1) {
+		this.judges1 = judges1;
+	}
+
+	public JLabel getJudges2() {
+		return judges2;
+	}
+
+	public void setJudges2(JLabel judges2) {
+		this.judges2 = judges2;
+	}
+
+	public JLabel getJudges3() {
+		return judges3;
+	}
+
+	public void setJudges3(JLabel judges3) {
+		this.judges3 = judges3;
+	}
+
+	public JComboBox<String> getSud1() {
+		return sud1;
+	}
+
+	public void setSud1(JComboBox<String> sud1) {
+		this.sud1 = sud1;
+	}
+
+	public JComboBox<String> getSud2() {
+		return sud2;
+	}
+
+	public void setSud2(JComboBox<String> sud2) {
+		this.sud2 = sud2;
+	}
+
+	public JComboBox<String> getSud3() {
+		return sud3;
+	}
+
+	public void setSud3(JComboBox<String> sud3) {
+		this.sud3 = sud3;
+	}
+
+	public ArrayList<String> getNazKlubovi() {
+		return nazKlubovi;
+	}
+
+	public void setNazKlubovi(ArrayList<String> nazKlubovi) {
+		this.nazKlubovi = nazKlubovi;
+	}
+
+	public ArrayList<String> getNazHala() {
+		return nazHala;
+	}
+
+	public void setNazHala(ArrayList<String> nazHala) {
+		this.nazHala = nazHala;
+	}
+
+	public ArrayList<String> getDelegati() {
+		return delegati;
+	}
+
+	public void setDelegati(ArrayList<String> delegati) {
+		this.delegati = delegati;
+	}
+
+	public ArrayList<String> getSudije() {
+		return sudije;
+	}
+
+	public void setSudije(ArrayList<String> sudije) {
+		this.sudije = sudije;
+	}
+
+	public String getKlubHome() {
+		return klubHome;
+	}
+
+	public void setKlubHome(String klubHome) {
+		this.klubHome = klubHome;
+	}
+
+	public String getKlubGuest() {
+		return klubGuest;
+	}
+
+	public void setKlubGuest(String klubGuest) {
+		this.klubGuest = klubGuest;
+	}
+
+	public String getIzabranaHala() {
+		return izabranaHala;
+	}
+
+	public void setIzabranaHala(String izabranaHala) {
+		this.izabranaHala = izabranaHala;
+	}
+
+	public Delegat getIzabraniDelegat() {
+		return izabraniDelegat;
+	}
+
+	public void setIzabraniDelegat(Delegat izabraniDelegat) {
+		this.izabraniDelegat = izabraniDelegat;
+	}
+
+	public String getIzabranis1() {
+		return izabranis1;
+	}
+
+	public void setIzabranis1(String izabranis1) {
+		this.izabranis1 = izabranis1;
+	}
+
+	public String getIzabranis2() {
+		return izabranis2;
+	}
+
+	public void setIzabranis2(String izabranis2) {
+		this.izabranis2 = izabranis2;
+	}
+
+	public String getIzabranis3() {
+		return izabranis3;
+	}
+
+	public void setIzabranis3(String izabranis3) {
+		this.izabranis3 = izabranis3;
+	}
+
+	public String getIzabraniDatum() {
+		return izabraniDatum;
+	}
+
+	public void setIzabraniDatum(String izabraniDatum) {
+		this.izabraniDatum = izabraniDatum;
+	}
+
+	public String getIzabranoVreme() {
+		return izabranoVreme;
+	}
+
+	public void setIzabranoVreme(String izabranoVreme) {
+		this.izabranoVreme = izabranoVreme;
+	}
+
+	public ArrayList<Sudija> getIzabraniSudija() {
+		return izabraniSudija;
+	}
+
+	public void setIzabraniSudija(ArrayList<Sudija> izabraniSudija) {
+		this.izabraniSudija = izabraniSudija;
+	}
+
+	public int getNum() {
+		return num;
+	}
+
+	public void setNum(int num) {
+		this.num = num;
+	}
+
+	public int getNums1() {
+		return nums1;
+	}
+
+	public void setNums1(int nums1) {
+		this.nums1 = nums1;
+	}
+
+	public int getNums2() {
+		return nums2;
+	}
+
+	public void setNums2(int nums2) {
+		this.nums2 = nums2;
+	}
+
+	public int getNums3() {
+		return nums3;
+	}
+
+	public void setNums3(int nums3) {
+		this.nums3 = nums3;
+	}
+
+	
 }
