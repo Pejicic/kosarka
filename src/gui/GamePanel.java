@@ -10,10 +10,11 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 import model.Database;
+import model.Hala;
 import model.Klub;
 import sun.security.krb5.internal.tools.Klist;
 
-public class GamePanel extends JPanel implements ActionListener{
+public class GamePanel extends JPanel{
 	
 	private JLabel homeTeam;
 	private JComboBox<String> homeBox;
@@ -35,9 +36,16 @@ public class GamePanel extends JPanel implements ActionListener{
 	private JComboBox delBox;
 	
 	private JLabel hala;
-	private JComboBox halaBox;
+	private JComboBox<String> halaBox;
 	
 	private ArrayList<String> nazKlubovi;
+	private ArrayList<String> nazHala;
+	
+	private String klubHome;
+	private String klubGuest;
+	private String izabranaHala;
+	
+	private int num = 0; // pomoc oko preklapanja liste
 	
 	public GamePanel () throws SQLException{
 		initialize();
@@ -74,7 +82,28 @@ public class GamePanel extends JPanel implements ActionListener{
 			homeBox.addItem(k);
 		}
 		
-		homeBox.addActionListener(this);
+		homeBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ev) {
+				
+				klubHome = (String) homeBox.getSelectedItem();
+				if (num==0){
+					for (String k: nazKlubovi){
+						guestBox.addItem(k);
+					}
+					guestBox.removeItem(klubHome);
+					num++;
+				}
+				else {
+					guestBox.removeAllItems();
+					for (String k: nazKlubovi){
+						guestBox.addItem(k);
+					}
+					guestBox.removeItem(klubHome);
+					num++;
+				}
+			}
+
+		});
 		
 				
 		homeBox.setPreferredSize(dim);
@@ -93,13 +122,12 @@ public class GamePanel extends JPanel implements ActionListener{
 		guestBox.setPreferredSize(dim);
 		
 		
-		for(String k : nazKlubovi){
-			System.out.println(k);
-		}
-		
-		for (String k1: nazKlubovi){
-			guestBox.addItem(k1);
-		}
+
+		guestBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ev) {
+				klubGuest= (String) guestBox.getSelectedItem();
+				
+		}});
 		
 		guestButton= new JButton("Guest players ");
 		panGuest.add(guestTeam);
@@ -128,11 +156,32 @@ public class GamePanel extends JPanel implements ActionListener{
 		JPanel panHala =new JPanel(new FlowLayout(FlowLayout.LEFT));
 		hala = new JLabel("Arena: ");
 		hala.setPreferredSize(dim);
-		halaBox= new JComboBox();
+		halaBox= new JComboBox<String>();
 		halaBox.setPreferredSize(dim);
+		
+		nazHala = new ArrayList<String>();
+		Database.rs = Database.st.executeQuery("select nazhal from hala");
+		
+		while(Database.rs.next()){
+			if (Database.rs.getString(1) != null){
+				String name = Database.rs.getString(1);
+				Hala h = new Hala(name);
+				nazHala.add(h.getNaziv());
+			}
+		}
+		
+		for (String h: nazHala){
+			halaBox.addItem(h);
+		}
 		panHala.add(hala);
 		panHala.add(halaBox);
 		box.add(panHala);
+		
+		halaBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ev) {
+				izabranaHala= (String) halaBox.getSelectedItem();
+				
+		}});
 		
 		JPanel panDel =new JPanel(new FlowLayout(FlowLayout.LEFT));
 		delegate = new JLabel("Delegate: ");
@@ -149,14 +198,5 @@ public class GamePanel extends JPanel implements ActionListener{
 		add(box,BorderLayout.CENTER);
 	}
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		JComboBox cb = (JComboBox)e.getSource();
-		String nazK = (String)cb.getSelectedItem();
-		System.out.println(nazK);
-		nazKlubovi.remove(nazKlubovi.indexOf(nazK));
-		
-	}
 
 }

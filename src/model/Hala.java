@@ -19,6 +19,10 @@ public class Hala {
 		this.kapacitet = kapacitet;
 		this.mesto = mesto;
 	}
+	
+	public Hala(String name){
+		this.naziv = name;
+	}
 
 	public String getNaziv() {
 		return naziv;
