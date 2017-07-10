@@ -1,8 +1,0 @@
-insert into SUD_DEL (id, iduloga, ime, prz, drz, god)values(1, 'S', 'Regis', 'Bardera', 'FRA', 1973);
-insert into SUD_DEL (id, iduloga, ime, prz, drz, god)values(2, 'S', 'Ilija', 'Belosevic', 'SRB', 1972);
-insert into SUD_DEL (id, iduloga, ime, prz, drz, god)values(3, 'S', 'Christos', 'Christodoulou', 'GRC', 1966);
-insert into SUD_DEL (id, iduloga, ime, prz, drz, god)values(4, 'S', 'Sergey', 'Mikhaylov', 'RUS', 1967);
-insert into SUD_DEL (id, iduloga, ime, prz, drz, god)values(5, 'S', 'Mauro', 'Pozzana', 'ITA', 1974);
-insert into SUD_DEL (id, iduloga, ime, prz, drz, god)values(6, 'S', 'Rustu', 'Nuran', 'TUR', 1976);
-insert into SUD_DEL (id, iduloga, ime, prz, drz, god)values(7, 'D', 'Lahdo', 'Sharro', 'SWE', 1970);
-insert into SUD_DEL (id, iduloga, ime, prz, drz, god)values(8, 'D', 'Iztok', 'Rems', 'SVN', 1958);

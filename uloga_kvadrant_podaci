@@ -1,9 +1,0 @@
-INSERT INTO ULOGA VALUES ('S', 'SUDIJA');
-INSERT into ULOGA VALUES('D', 'DELEGAT');
-
-insert into KVADRANT values('k1', 'prvi');
-insert into kvadrant values('k2', 'drugi');
-insert into KVADRANT values ('k3', 'treci');
-insert into kvadrant values ('k4', 'cetvrti');
-insert into kvadrant values ('k5', 'peti');
-insert into kvadrant values ('k6', 'sesti');

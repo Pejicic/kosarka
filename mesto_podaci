@@ -1,6 +1,0 @@
-insert into MESTO (idmes, iddrz, nazmesto) values('BG', 'SRB' , 'Belgrade');
-insert into MESTO (idmes, iddrz, nazmesto) values('MO', 'RUS' , 'Moscow');
-insert into MESTO (idmes, iddrz, nazmesto) values('MI', 'ITA' , 'Milan');
-insert into MESTO (idmes, iddrz, nazmesto) values('BR', 'ESP' , 'Barcelona');
-insert into MESTO (idmes, iddrz, nazmesto) values('IS', 'TUR' , 'Istanbul');
-insert into MESTO (idmes, iddrz, nazmesto) values('PI', 'GRC' , 'Piraeus');

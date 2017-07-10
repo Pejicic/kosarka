@@ -1,6 +1,0 @@
-insert into hala (idhale, nazhal, idmes, kapacitet)values ('H1', 'Kombank Arena' , 'BG',25223 );
-insert into hala (idhale, nazhal, idmes, kapacitet)values ('H2', 'Megasport Arena' , 'MO', 14000);
-insert into hala (idhale, nazhal, idmes, kapacitet)values ('H3', 'Mediolanum Forum' , 'MI', 12700);
-insert into hala (idhale, nazhal, idmes, kapacitet)values ('H4', 'Palau Blaugrana' , 'BR', 7585);
-insert into hala (idhale, nazhal, idmes, kapacitet)values ('H5', 'Fenerbahce Ulker Sports Arena' , 'IS',13059 );
-insert into hala (idhale, nazhal, idmes, kapacitet)values ('H6', 'Peace and friendship stadium' , 'PI', 14940);
