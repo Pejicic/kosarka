@@ -1,0 +1,46 @@
+INSERT INTO ULOGA VALUES ('S', 'SUDIJA');
+INSERT into ULOGA VALUES('D', 'DELEGAT');
+
+insert into KVADRANT values('k1', 'prvi');
+insert into kvadrant values('k2', 'drugi');
+insert into KVADRANT values ('k3', 'treci');
+insert into kvadrant values ('k4', 'cetvrti');
+insert into kvadrant values ('k5', 'peti');
+insert into kvadrant values ('k6', 'sesti');
+
+
+insert into pozicija values('F', 'FORWARD');
+insert into pozicija values('C', 'CENTER');
+insert into pozicija values('G', 'GUARD');
+
+insert into POKUSAJ_SUT (idsut, nazsut, brpoena) values('SU1', 'SLOBODNO BAC' , 1);
+insert into POKUSAJ_SUT (idsut, nazsut, brpoena) values('SU2', 'DVOJKA' , 2);
+insert into POKUSAJ_SUT (idsut, nazsut, brpoena) values('SU3', 'TROJKA' , 3);
+
+insert into LICNE_GRESKE (idlg, brsuteva) values('P1',  1);
+insert into LICNE_GRESKE (idlg,brsuteva) values('P2',  2);
+insert into LICNE_GRESKE (idlg, brsuteva) values('P3',  3);
+INSERT INTO LICNE_GRESKE (idlg, brsuteva) values ('D1', 3); --diskvalifikujuca 
+
+
+insert into IZ_LOPTE (idiz, naziz) values ('I1', 'KORACI');
+insert into IZ_LOPTE (idiz, naziz) values ('I2', 'DUPLA LOPTA');
+insert into IZ_LOPTE (idiz, naziz) values ('I3', 'LOSE DODAVANJE');
+insert into IZ_LOPTE (idiz, naziz) values ('I4', 'LOSE HVATANJE');
+insert into IZ_LOPTE (idiz, naziz) values ('I5', 'REKET');
+insert into IZ_LOPTE (idiz, naziz) values ('I14', 'ISTEKLO VREME');
+insert into IZ_LOPTE (idiz, naziz) values ('I6', '8 SEKUNDI');
+insert into IZ_LOPTE (idiz, naziz) values ('I7', '5 SEKUNDI');
+insert into IZ_LOPTE (idiz, naziz) values ('I8', 'PREKRSAJ 5 S');
+insert into IZ_LOPTE (idiz, naziz) values ('I9', 'PREKO POLA');
+insert into IZ_LOPTE (idiz, naziz) values ('I10', 'LOSE VODJENJE');
+insert into IZ_LOPTE (idiz, naziz) values ('I11', 'TEHNICKA');
+insert into IZ_LOPTE (idiz, naziz) values ('I12', 'NESPORTSKA');
+insert into IZ_LOPTE (idiz, naziz) values ('I13', 'TEHNICKA TRENERU');
+
+insert into NESPORTSKE_GRESKE (idng, bod) values ('U1', 1);
+insert into NESPORTSKE_GRESKE (idng, bod) values ('U2', 2);
+insert into NESPORTSKE_GRESKE (idng, bod) values ('U3', 3);
+
+insert into SKOK values('SK1', 'NAPAD');
+INSERT INTO SKOK VALUES('SK2', 'ODBRANA');

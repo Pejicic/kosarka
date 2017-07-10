@@ -1,0 +1,2 @@
+insert into korisnici(idk, ime, prz, username, pass) values ('K1', 'Maja' , 'Savic', 'maja', '1111');
+insert into korisnici(idk, ime, prz, username, pass) values ('K2', 'Lena' , 'Lukic', 'lenka', '1211');
