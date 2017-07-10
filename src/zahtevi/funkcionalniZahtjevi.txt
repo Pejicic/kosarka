@@ -1,0 +1,49 @@
+Od uloga postoji samo korisnik.
+Funkcionalnosti koje su omogucene korisniku su:
+Korisniku se na pocetku omogucava logovanje u aplikaciju
+1.Za halu:
+     A)Dodavanje nove hale 
+     B)Pretrazivanje postojecih hala
+     C)Brisanje odabrane hale
+2.Za utakmice:
+     A)Dodavanje nove utakmice
+     B)Pretrazivanje postojecih utakmica
+     C)Brisanje odabrane utakmice
+3.Za igrace:
+     A)Dodavanje novog igraca
+     B)Pretrazivanje postojecih igraca
+     C)Brisanje odabranog igraca
+4.Za sudije:
+     A)Dodavanje novog sudije
+     B)Pretraga postojecih sudija
+     C)Brisanje odabranog sudije
+5. Za trenere:
+     A)Dodavanje novog trenera
+     B)Pretraga postojecih trenera
+     C)Brisanje odabranog trenera
+6.Za delegata:
+     A)Dodavanje novog delegata
+     B)Pretraga postojecih delegata
+     C)Brisanje odabranog delegata
+7.Za klub:
+     A)Dodavanje novog kluba
+     B)Pretraga postojecih klubova
+     C)Brisanje odabranog kluba
+8.Za statistiku utakmice:
+     A)Dodavanje nove statistike
+     B)Pretraga postojecih klubova
+     C)Brisanje odabrane statistike
+9.Za statistiku trenera:
+     A)Dodavanje nove statistike
+     B)Pretraga postojecih statistika
+     C)Brisanje odabrane statistike
+10.Za statistiku igraca:
+     A)Dodavanje nove statistike
+     B)Pretraga postojecih statistika
+     C)Brisanje odabrane statistike
+11.Za nove korisnike:
+     A)Dodavanje novog korisnika
+     B)Pretraga postojecih
+     C)Brisanje korisnika
+U okviru statistike igraca se omogucavaju:dodavanja licne,
+skokova, suteva,izgubljenih lopti, kao i njihova pretraga i brisanje.

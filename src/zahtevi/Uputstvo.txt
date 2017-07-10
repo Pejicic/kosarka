@@ -1,0 +1,9 @@
+Da bi se sam program pokrenuo potrebno je izvrsiti skripte koje su u prilogu
+u oracle sql developeru.
+Korisnicko ime:sims
+Lozinka:ftn
+role: default
+hostname: localhost
+port:1521
+opcija SID odabrana, a u polju xe.
+Sama konekcija se izvrsi pomocu skripte kreiranje korisnika.

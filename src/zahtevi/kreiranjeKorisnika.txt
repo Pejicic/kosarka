@@ -1,0 +1,21 @@
+create user sims identified by ftn
+    default tablespace users temporary tablespace TEMP;
+    
+    
+    grant connect, resource to sims;
+    
+    grant create table to sims;
+
+    grant create view to sims;
+
+    grant create procedure to sims;
+
+    grant create synonym to sims;
+
+    grant create sequence to sims;
+
+    grant select on dba_rollback_segs to sims;
+
+    grant select on dba_segments to sims;
+
+	grant unlimited tablespace to sims;
