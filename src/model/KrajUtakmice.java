@@ -2,16 +2,18 @@ package model;
 
 import gui.GameWindow;
 import gui.ResultDialog;
+import gui.StatisticsDialog;
 
 /** @pdOid fb6131c5-d57e-4001-bc59-e2a916a4ed16 */
 public class KrajUtakmice extends StanjeUtakmice {
 	/** @pdOid 69a5d550-6795-45c0-af34-a2403994b47f */
 	public void entry() {
-		System.out.println("ebtr kraj");
+		
 		GameWindow.quarter.setText("THE END");
+		/*
 		ResultDialog dialog = new ResultDialog();
 		dialog.setVisible(true);
-		dialog.setTitle("Results --END--");
+		dialog.setTitle("Results --END--");*/
 		_do();
 	}
 
@@ -22,7 +24,8 @@ public class KrajUtakmice extends StanjeUtakmice {
 
 	/** @pdOid 1bf669f1-225a-4648-8601-461bd7a2db49 */
 	public void _do() {
-		//dialog za odabir izvestaja
+		StatisticsDialog sd= new StatisticsDialog();
+		sd.setVisible(true);
 	}
 
 	/** @pdOid a4890bfa-b1ad-4009-ba05-8fdb0b50316b */

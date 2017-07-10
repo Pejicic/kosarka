@@ -36,8 +36,8 @@ public class ResultDialog extends JDialog{
 		final int y = (screenSize.height - getHeight()) / 2;
 		setLocation(x, y);
 		
-		JPanel panel1= new JPanel(); // donji ugao
-		panel1.setLayout(new FlowLayout(FlowLayout.RIGHT));
+		JPanel panel= new JPanel(); // donji ugao
+		panel.setLayout(new FlowLayout(FlowLayout.RIGHT));
 		
 		JPanel homePan= new JPanel(); // za domacina
 		
@@ -59,10 +59,10 @@ public class ResultDialog extends JDialog{
 		box.add(guestPan);
 		
 		ok= new JButton("OK");
-		panel1.add(ok);
+		panel.add(ok);
 		
 		add(box,BorderLayout.CENTER);
-		add(panel1,BorderLayout.SOUTH);
+		add(panel,BorderLayout.SOUTH);
 		
 		ok.addActionListener(new ActionListener() {
 
