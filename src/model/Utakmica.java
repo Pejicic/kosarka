@@ -163,22 +163,25 @@ public class Utakmica {
 
 	/** @pdOid 0cd4f7d1-9c74-410d-86de-74f0700c99a8 */
 	public void klikPocetak() {
-		// TODO: implement
+		PocetakUtakmice pu =new PocetakUtakmice();
+		setAktivno(pu);
+		prikazTerenaIPostave();
 	}
 
 	/** @pdOid 669685d6-bfe3-40bf-9348-ef1cc15bf325 */
 	public void klikKraj() {
-		// TODO: implement
+		getAktivno().dogadjajKlikKraj();
 	}
 
 	/** @pdOid 94bc43c4-865a-4ada-98db-efe2f31a41ac */
 	public void klikSledeca() {
-		// TODO: implement
+		getAktivno().dogadjajKlikSledeca();
 	}
 
 	/** @pdOid e3a90fcf-fd90-4591-b41d-e42c5805092a */
 	public void prikazTerenaIPostave() {
 		// TODO: implement
+		getAktivno().entry();
 	}
 
 	/** @pdOid 3012fb5b-d06d-4d27-ae5d-15b285ddf334 */

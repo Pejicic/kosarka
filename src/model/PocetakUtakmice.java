@@ -34,14 +34,14 @@ public class PocetakUtakmice extends StanjeUtakmice {
 	}
 
 	/** @pdOid 412500d2-c7e7-433e-abe4-222abc6dbe90 */
-	public void dogadjajKlikKraj(Utakmica u) {
+	public void dogadjajKlikKraj() {
 		// TODO: implement
 	}
 
 	/** @pdOid 21719614-a1e4-412a-88a9-eb5f2382f808 */
-	public void dogadjajKlikSledeca(Utakmica u) {
+	public void dogadjajKlikSledeca() {
 		Prva stanje= new Prva();
-		u.setAktivno(stanje);
+		GamePanel.novaUtakmica.setAktivno(stanje);
 		stanje.entry();
 		return;
 	}

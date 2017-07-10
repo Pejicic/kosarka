@@ -176,10 +176,10 @@ public class GameWindow extends JFrame{
 			public void actionPerformed(ActionEvent ev) {
 				n++;
 				if (n==5){
-					u.getAktivno().dogadjajKlikKraj(u);
+					GamePanel.novaUtakmica.klikKraj();
 				}
 				else {
-					u.getAktivno().dogadjajKlikSledeca(u);
+					GamePanel.novaUtakmica.klikSledeca();
 				}
 				
 				

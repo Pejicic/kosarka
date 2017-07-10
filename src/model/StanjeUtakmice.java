@@ -24,12 +24,12 @@ public class StanjeUtakmice {
    }
    
    /** @pdOid b5c55a6b-8fe5-45b6-b25e-3671a7d89f79 */
-   public void dogadjajKlikKraj(Utakmica u) {
+   public void dogadjajKlikKraj() {
       // TODO: implement
    }
    
    /** @pdOid 8982ea8c-1b30-4cd6-8230-2e25b36e0a90 */
-   public void dogadjajKlikSledeca(Utakmica u) {
+   public void dogadjajKlikSledeca() {
       // TODO: implement
    }
    

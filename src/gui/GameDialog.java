@@ -70,8 +70,8 @@ public class GameDialog extends JDialog{
 		Hala hala = new Hala(gp.getIzabranaHala());
 		gp.setNovaUtakmica ( new Utakmica(gp.getIzabraniDatum(), gp.getIzabranoVreme(), 
 				gp.getIzabraniDelegat(), gp.getIzabraniSudija(), klubG, klubD, hala));
-		PocetakUtakmice pocetak= new PocetakUtakmice();
-		gp.getNovaUtakmica().setAktivno(pocetak);
-		pocetak.entry();
+		//PocetakUtakmice pocetak= new PocetakUtakmice();
+		//gp.getNovaUtakmica().setAktivno(pocetak);
+		GamePanel.novaUtakmica.klikPocetak();
 	}
 }

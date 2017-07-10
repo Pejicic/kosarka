@@ -1,5 +1,6 @@
 package model;
 
+import gui.GamePanel;
 import gui.GameWindow;
 import gui.ResultDialog;
 import gui.StatisticsDialog;
@@ -10,16 +11,18 @@ public class KrajUtakmice extends StanjeUtakmice {
 	public void entry() {
 		
 		GameWindow.quarter.setText("THE END");
+		
+		
 		/*
 		ResultDialog dialog = new ResultDialog();
 		dialog.setVisible(true);
 		dialog.setTitle("Results --END--");*/
-		_do();
+		
 	}
 
 	/** @pdOid 02e94b71-825b-4f86-a707-2f87d4ebed09 */
 	public void exit() {
-		// TODO: implement
+		
 	}
 
 	/** @pdOid 1bf669f1-225a-4648-8601-461bd7a2db49 */
@@ -34,8 +37,8 @@ public class KrajUtakmice extends StanjeUtakmice {
 	}
 
 	/** @pdOid 25f641fc-9b82-405c-a8fe-143bfd570c1e */
-	public void dogadjajKlikKraj(Utakmica u) {
-		// TODO: implement
+	public void dogadjajKlikKraj() {
+		
 	}
 
 	/** @pdOid 499c6a08-2a55-41ef-9ee8-26fa495899bf */

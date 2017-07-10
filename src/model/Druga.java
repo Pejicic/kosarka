@@ -1,6 +1,7 @@
 
 package model;
 
+import gui.GamePanel;
 import gui.GameWindow;
 import gui.ResultDialog;
 
@@ -13,7 +14,7 @@ public class Druga extends StanjeUtakmice {
 
 	/** @pdOid 7f8fd24a-b60e-4f3d-b690-5f5d35a2ef66 */
 	public void exit() {
-		ResultDialog dialog = new ResultDialog();
+		ResultDialog dialog = new ResultDialog(0);
 		dialog.setVisible(true);
 		dialog.setTitle("Results after 2/4");
 	}
@@ -29,15 +30,15 @@ public class Druga extends StanjeUtakmice {
 	}
 
 	/** @pdOid 59d796dc-75a7-4f3a-9a1f-182ab23550c7 */
-	public void dogadjajKlikKraj(Utakmica u) {
+	public void dogadjajKlikKraj() {
 		// TODO: implement
 	}
 
 	/** @pdOid ca699f37-8483-4790-97f3-6b31f412e072 */
-	public void dogadjajKlikSledeca(Utakmica u) {
-		u.getAktivno().exit();
+	public void dogadjajKlikSledeca() {
+		GamePanel.novaUtakmica.getAktivno().exit();
 		Treca stanje= new Treca();
-		u.setAktivno(stanje);
+		GamePanel.novaUtakmica.setAktivno(stanje);
 		stanje.entry();
 	}
 

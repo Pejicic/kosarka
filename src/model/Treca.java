@@ -1,5 +1,6 @@
 package model;
 
+import gui.GamePanel;
 import gui.GameWindow;
 import gui.ResultDialog;
 
@@ -12,7 +13,7 @@ public class Treca extends StanjeUtakmice {
 
 	/** @pdOid 5769b7d2-f7a1-4680-bb02-1897cbb54024 */
 	public void exit() {
-		ResultDialog dialog = new ResultDialog();
+		ResultDialog dialog = new ResultDialog(0);
 		dialog.setVisible(true);
 		dialog.setTitle("Results after 3/4");
 	}
@@ -28,16 +29,16 @@ public class Treca extends StanjeUtakmice {
 	}
 
 	/** @pdOid 72f9a142-b990-4b2f-b69b-91d38910f59e */
-	public void dogadjajKlikKraj(Utakmica u) {
+	public void dogadjajKlikKraj() {
 		// TODO: implement
 	}
 
 	/** @pdOid a3c1230f-8fd3-44f1-a696-27e91a7cfe79 */
-	public void dogadjajKlikSledeca(Utakmica u) {
+	public void dogadjajKlikSledeca() {
 
-		u.getAktivno().exit();
+		GamePanel.novaUtakmica.getAktivno().exit();
 		Cetvrta stanje= new Cetvrta();
-		u.setAktivno(stanje);
+		GamePanel.novaUtakmica.setAktivno(stanje);
 		stanje.entry();
 	}
 

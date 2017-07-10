@@ -14,6 +14,8 @@ import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import model.KrajUtakmice;
+
 public class ResultDialog extends JDialog{
 	
 	private JLabel home;
@@ -21,8 +23,10 @@ public class ResultDialog extends JDialog{
 	private JLabel homeRes;
 	private JLabel guestRes;
 	private JButton ok;
+	private int option;
 
-	public ResultDialog(){
+	public ResultDialog( int n){
+		option =n;
 		initialize();
 	}
 
@@ -67,7 +71,13 @@ public class ResultDialog extends JDialog{
 		ok.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				dispose();
+				if( option==1){
+					GamePanel.novaUtakmica.getAktivno()._do();
+					dispose();
+					
+				}
+				else{
+				dispose();}
 				}
 		});
 	}
