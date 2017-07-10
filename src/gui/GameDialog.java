@@ -8,10 +8,14 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.text.ParseException;
 
-import javax.swing.*;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
 
 import model.Hala;
 import model.Klub;
+import model.PocetakUtakmice;
 import model.Sudija;
 import model.Utakmica;
 
@@ -45,16 +49,8 @@ public class GameDialog extends JDialog{
 
 		play.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent ev) {
-				
-				makeGame();
-				GameWindow gw;
-				try {
-					gw = new GameWindow(gp.getNovaUtakmica());
-					gw.setVisible(true);
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
 				dispose();
+				makeGame();
 				
 		}});
 	}
@@ -75,5 +71,8 @@ public class GameDialog extends JDialog{
 		Hala hala = new Hala(gp.getIzabranaHala());
 		gp.setNovaUtakmica ( new Utakmica(gp.getIzabraniDatum(), gp.getIzabranoVreme(), 
 				gp.getIzabraniDelegat(), gp.getIzabraniSudija(), klubG, klubD, hala));
+		PocetakUtakmice pocetak= new PocetakUtakmice();
+		gp.getNovaUtakmica().setAktivno(pocetak);
+		pocetak.entry();
 	}
 }

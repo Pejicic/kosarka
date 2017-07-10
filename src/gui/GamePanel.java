@@ -6,9 +6,7 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
-import java.text.DateFormat;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import javax.swing.Box;
@@ -76,7 +74,7 @@ public class GamePanel extends JPanel {
 	private int nums2 = 0;
 	private int nums3 = 0;
 
-	private Utakmica novaUtakmica;
+	public static Utakmica novaUtakmica;
 
 	public GamePanel() throws SQLException, ParseException {
 		initialize();
@@ -95,21 +93,7 @@ public class GamePanel extends JPanel {
 		initializeHall(dim, box);
 		initializeDelegate(dim, box);
 		initializeJugdes(dim, box);
-
-
-		/*String token[] = getIzabranis1().split(" ");
-		Sudija s1 = new Sudija(token[0].trim(), token[1].trim());
-		izabraniSudija.add(s1);
-		String tokens[] = getIzabranis2().split(" ");
-		Sudija s2 = new Sudija(tokens[0].trim(), tokens[1].trim());
-		izabraniSudija.add(s2);
-		String tokens1[] = getIzabranis3().split(" ");
-		Sudija s3 = new Sudija(tokens1[0].trim(), tokens1[1].trim());
-		izabraniSudija.add(s3);
-		Klub klubG = new Klub(getKlubGuest());
-		Klub klubD = new Klub(getKlubHome());
-		Hala hala = new Hala(getIzabranaHala());
-		novaUtakmica = new Utakmica(getIzabraniDatum(), getIzabranoVreme(), getIzabraniDelegat(), izabraniSudija, klubG, klubD, hala);*/
+		
 		add(box, BorderLayout.CENTER);
 
 		

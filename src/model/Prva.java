@@ -1,15 +1,22 @@
 package model;
 
+import gui.GameWindow;
+import gui.ResultDialog;
+
 /** @pdOid 4e967fc2-00fc-4873-bdaf-8f011aefebfa */
 public class Prva extends StanjeUtakmice {
 	/** @pdOid 8084e81a-8798-4eff-93c6-b113b23cd232 */
 	public void entry() {
-		// TODO: implement
+		GameWindow.quarter.setText("1. quarter");
 	}
 
 	/** @pdOid 61c9b278-daa5-458d-8aba-873b04445152 */
 	public void exit() {
-		// TODO: implement
+		ResultDialog dialog = new ResultDialog();
+		dialog.setVisible(true);
+		dialog.setTitle("Results after 1/4");
+		
+		
 	}
 
 	/** @pdOid cb61dfd8-54d4-4f0b-8e7c-65303153d62d */
@@ -23,13 +30,17 @@ public class Prva extends StanjeUtakmice {
 	}
 
 	/** @pdOid e1c631da-7fa5-4031-9820-09d3d3505219 */
-	public void dogadjajKlikKraj() {
+	public void dogadjajKlikKraj(Utakmica u) {
 		// TODO: implement
 	}
 
 	/** @pdOid 7020f125-0d98-4189-9ce8-50f6e988e3a8 */
-	public void dogadjajKlikSledeca() {
-		// TODO: implement
+	public void dogadjajKlikSledeca(Utakmica u) {
+		
+		u.getAktivno().exit();
+		Druga stanje= new Druga();
+		u.setAktivno(stanje);
+		stanje.entry();
 	}
 
 }

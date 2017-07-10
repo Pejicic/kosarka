@@ -2,6 +2,8 @@ package gui;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -33,10 +35,14 @@ public class GameWindow extends JFrame{
 	private JLabel homeRes; 
 	private JLabel guestRes;
 	
-	private JLabel quarter;
-	private JButton state;
+	public static JLabel quarter;
+	public static JButton state;
+	public static String resH;
+	public static String resG;
 	
+	private int n=0;
 
+	
 	public GameWindow(Utakmica u) throws IOException{
 		initialize(u);
 	}
@@ -49,7 +55,6 @@ public class GameWindow extends JFrame{
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setResizable(false);
         
-        
         Rectangle r = getBounds();
 		int h = r.height;
 		int w = r.width;
@@ -61,6 +66,11 @@ public class GameWindow extends JFrame{
                 g.drawImage(image, 0, 0, w, h, this);
             }
         });
+        drawField(u,w,h);
+	}
+	
+	public void drawField(Utakmica u, int w, int h){
+		 
       
         setLayout(null);
         
@@ -97,37 +107,39 @@ public class GameWindow extends JFrame{
         add(pos8);
         
         pos9=new JButton("Igrac9");
-        pos9.setBounds(1000, 500, 150, 50);
+        pos9.setBounds(1000, 500, 100, 50);
         add(pos9);
         
         pos10=new JButton("Igrac10");
-        pos10.setBounds(1100, 600, 150, 50);
+        pos10.setBounds(1100, 600, 100, 50);
         add(pos10);
         
-        int sredina= w/2-150; // da bude iza crte
+        int sredina= w/2-200; // da bude iza crte
         home=new JLabel(u.getDomacin().getNazivKluba());
         home.setForeground(Color.white);
-        home.setBounds(sredina, 10, 100, 50);
+        home.setBounds(sredina, 10, 150, 50);
         add(home);
         
         
         guest=new JLabel(u.getGosti().getNazivKluba());
         guest.setForeground(Color.white);
-        guest.setBounds(sredina+200, 10, 100, 50);
+        guest.setBounds(sredina+300, 10, 150, 50);
         add(guest);
         
         homeRes=new JLabel("0");
         homeRes.setForeground(Color.white);
         homeRes.setBounds(sredina, 30, 100, 50);
+        resH= homeRes.getText();
         add(homeRes);
         
         guestRes=new JLabel("0");
         guestRes.setForeground(Color.white);
-        guestRes.setBounds(sredina+150, 30, 100, 50);
+        guestRes.setBounds(sredina+300, 30, 100, 50);
+        resG= guestRes.getText();
         add(guestRes);
                 
         
-        quarter=new JLabel("1. quarter");
+        quarter=new JLabel("Start");
         quarter.setForeground(Color.white);
         quarter.setBounds(w/2-100, h-100, 100, 50);
         add(quarter);
@@ -135,5 +147,19 @@ public class GameWindow extends JFrame{
         state=new JButton("Next");
         state.setBounds(w/2+50, h-100, 100, 40);
         add(state);
+        
+        state.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent ev) {
+				n++;
+				if (n==5){
+					u.getAktivno().dogadjajKlikKraj(u);
+				}
+				else {
+					u.getAktivno().dogadjajKlikSledeca(u);
+				}
+				
+				
+		}});
 	}
+		
 }
