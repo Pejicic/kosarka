@@ -1,0 +1,41 @@
+NEFUNKCIONALNI ZAHTEVI
+
+
+Nefunkcionalni zahtevi preciziraju kriterijume koji se koriste za procenu funkcionisanja sistema. Tu spadaju zahtevi vezani za proizvod (npr. peformanse, sigurnost), za razvojni proces (npr. programski jezik i standardi) i spoljna ogranièenja (sve ostalo).
+
+
+I PERFORMANSE
+
+Sistem omoguæava brzu reakciju na korisnièke akcije.
+
+
+II BEZBEDNOST
+
+Kao rezultat korišæenja sistema ne mogu nastati nikakvi zahtevi za gubitak i štetu koji se odnose na ljude, imovinu ili okolinu. U svakom trenutku se može prekinuti aplikacija.
+U okviru SUBP biæe implementirana ogranièenja i procedure koje æe vršiti proveru prilikom unosa ili izmena podataka.
+
+
+III SIGURNOST
+
+Podacima u aplikaciji moæi æe da pristupaju samo korisnici. 
+Svaki korisnik ima jedinstveno korisnièko ime i lozinku. 
+Sistem spreèava unos netaènih podataka. 
+
+
+IV RASPOLOŽIVOST I POUZDANOST
+
+Sistem æe biti na raspolaganju 24h èasa dnevno, 365 dana u godini. 
+Sistem æe se moæi koristiti kad god u toku dana. 
+Proizvod æe imati raspoloživost od 99%.
+Do iznenadnog prestanka rada sistema može doæi kao posledica grešaka u radu operativnog sistema korisnika ili problema vezanih za funkcionisanje servera.
+
+
+V ROBUSNOST
+
+Sistem æe nastaviti da funkcioniše u lokalnom režimu kada izgubi vezu sa centralnim serverom.
+ 
+VI OSTALI ZAHTEVI
+
+Program æe moæi da rukuje sa postojeæih 1000 klijenata.
+Program æe se koristiti u buènom okruženju/sa mnogo prašine/na otvorenom prostoru u kišnim uslovima/u prostoru sa prigušenim svetlom itd.
+Program je na engleskom jeziku, za sad.
