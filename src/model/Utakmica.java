@@ -186,7 +186,7 @@ public class Utakmica {
 
 	/** @pdOid 3012fb5b-d06d-4d27-ae5d-15b285ddf334 */
 	public void odabirDelegataISudija() {
-		// TODO: implement
+		// TODO: implement 
 	}
 
 	@Override

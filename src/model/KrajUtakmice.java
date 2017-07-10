@@ -11,13 +11,6 @@ public class KrajUtakmice extends StanjeUtakmice {
 	public void entry() {
 		
 		GameWindow.quarter.setText("THE END");
-		
-		
-		/*
-		ResultDialog dialog = new ResultDialog();
-		dialog.setVisible(true);
-		dialog.setTitle("Results --END--");*/
-		
 	}
 
 	/** @pdOid 02e94b71-825b-4f86-a707-2f87d4ebed09 */
@@ -42,7 +35,7 @@ public class KrajUtakmice extends StanjeUtakmice {
 	}
 
 	/** @pdOid 499c6a08-2a55-41ef-9ee8-26fa495899bf */
-	public void dogadjajKlikSledeca(Utakmica u) {
+	public void dogadjajKlikSledeca() {
 		// TODO: implement
 	}
 
