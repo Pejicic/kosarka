@@ -11,5 +11,5 @@ public class Database {
 	public static Statement st;
 	public static ResultSet rs;
 
-	
+	public static int count = 50;
 }

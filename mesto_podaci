@@ -1,6 +1,6 @@
-insert into MESTO (idmes, iddrz, nazmesto) values('BG', 'SRB' , 'BELGRADE');
-insert into MESTO (idmes, iddrz, nazmesto) values('MO', 'RUS' , 'MOSCOW');
-insert into MESTO (idmes, iddrz, nazmesto) values('MI', 'ITA' , 'MILAN');
-insert into MESTO (idmes, iddrz, nazmesto) values('BR', 'ESP' , 'BARCELONA');
-insert into MESTO (idmes, iddrz, nazmesto) values('IS', 'TUR' , 'ISTANBUL');
-insert into MESTO (idmes, iddrz, nazmesto) values('PI', 'GRC' , 'PIRAEUS');
+insert into MESTO (idmes, iddrz, nazmesto) values('BG', 'SRB' , 'Belgrade');
+insert into MESTO (idmes, iddrz, nazmesto) values('MO', 'RUS' , 'Moscow');
+insert into MESTO (idmes, iddrz, nazmesto) values('MI', 'ITA' , 'Milan');
+insert into MESTO (idmes, iddrz, nazmesto) values('BR', 'ESP' , 'Barcelona');
+insert into MESTO (idmes, iddrz, nazmesto) values('IS', 'TUR' , 'Istanbul');
+insert into MESTO (idmes, iddrz, nazmesto) values('PI', 'GRC' , 'Piraeus');

@@ -1,10 +1,12 @@
 package model;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Collection;
 
 import gui.Main;
+import javafx.scene.chart.PieChart.Data;
 
 /** @pdOid 666160ba-e392-4a91-8998-e93bf3b6176e */
 public class Aplikacija {
@@ -55,32 +57,97 @@ public class Aplikacija {
 
 	/**
 	 * @param h
+	 * @throws SQLException
 	 * @pdOid 63346b20-2c3b-4cba-bf22-538bb74f7b19
 	 * 
 	 * 
 	 */
-	public void dodajHalu(Hala h) {
+	public boolean dodajHalu(Hala h) {
 		// TODO: implement
+		// 1. naci mesto gde se nalazi hala
+		String nazMesto = h.getMesto().getNazivMesta();
+		String mesto = null;
+		ResultSet rs;
+		try {
+			rs = Database.st.executeQuery("select idmes from mesto where nazmesto = '" + nazMesto + "'");
+
+			while (rs.next()) {
+				mesto = rs.getString(1);
+			}
+			// 2. unos hale u bazu
+
+			String unosHale = "insert into hala(idhale, nazhal, idmes, kapacitet) values ('H" + Database.count + "', '"
+					+ h.getNaziv() + "' , '" + mesto + "', " + h.getKapacitet() + ")";
+			int insert = Database.st.executeUpdate(unosHale);
+			if (insert > 0) {
+				Database.count += 1;
+				return true;
+			} else {
+				return false;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			return false;
+
+		}
+
 	}
 
 	/**
 	 * @param h
 	 * @pdOid 81aae51f-5b64-4095-b559-134747352ba2
 	 */
-	public void obrisiHalu(Hala h) {
-		// TODO: implement
+	public boolean obrisiHalu(Hala h) {
+
+		try {
+			String brisanjeHale = "DELETE from hala where nazhal = ?";
+			PreparedStatement ps = Database.con.prepareStatement(brisanjeHale);
+			ps.setString(1, h.getNaziv());
+			ResultSet rs = Database.st.executeQuery(brisanjeHale);
+			int delete = 0;
+			while(rs.next()){
+				delete++;
+			}
+			if (delete > 0) {
+				return true;
+			} else {
+				return false;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			return false;
+		}
 	}
 
 	/** @pdOid ee579d3c-542e-4a19-9872-12f8f0d9b288 */
-	public void pretraziHale() {
-		// TODO: implement
+	public boolean pretraziHale(Hala h) {
+		try {
+			ResultSet rs = Database.st.executeQuery("select * from hala where nazhal = '" + h.getNaziv() + "'" );
+			int count = 0;
+			while(rs.next()){
+				count++;
+			}
+			
+			if (count > 0 ){
+				return true;
+			}else{
+				return false;
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			return false;
+		}
+	
+
 	}
 
 	/**
 	 * @param u
 	 * @pdOid 51aef23f-61d2-4dd6-bae2-5bb6cae2f3e7
 	 */
-	public void dodajUtakmicu(Utakmica u) {
+	public boolean dodajUtakmicu(Utakmica u) {
+		return false;
 		// TODO: implement
 	}
 
@@ -88,40 +155,44 @@ public class Aplikacija {
 	 * @param u
 	 * @pdOid 861df700-1866-44bd-81e3-c1cc2a254778
 	 */
-	public void obrisiUtakmicu(Utakmica u) {
+	public boolean obrisiUtakmicu(Utakmica u) {
+		return false;
 		// TODO: implement
 	}
 
 	/** @pdOid 0226ed5e-7915-4cbf-b987-5d941547dfff */
-	public void pretraziUtakmice() {
+	public boolean pretraziUtakmice() {
+		return false;
 		// TODO: implement
 	}
 
-	/** @throws SQLException 
-	 * @pdOid 4fe38d40-40d7-4e27-9ca0-e1001e278ffb */
+	/**
+	 * @throws SQLException
+	 * @pdOid 4fe38d40-40d7-4e27-9ca0-e1001e278ffb
+	 */
 	public static boolean login(String username, String password) throws SQLException {
-		ResultSet rs = Database.st.executeQuery("select * from korisnici where username = '" + username + "' and pass = '" + password +  "' ");
-		
+		ResultSet rs = Database.st.executeQuery(
+				"select * from korisnici where username = '" + username + "' and pass = '" + password + "' ");
+
 		int count = 0;
-		while(rs.next()){
+		while (rs.next()) {
 			count += 1;
 		}
 		rs.close();
-		if(count == 1) {
+		if (count == 1) {
 			return true;
-		}else {
+		} else {
 			return false;
 		}
-		
-		// TODO: implement
-		
+
 	}
 
 	/**
 	 * @param k
 	 * @pdOid 4f83f05b-7fe9-43eb-b770-48a97e63489f
 	 */
-	public void dodajKorisnika(Korisnik k) {
+	public boolean dodajKorisnika(Korisnik k) {
+		return false;
 		// TODO: implement
 	}
 
@@ -129,12 +200,14 @@ public class Aplikacija {
 	 * @param k
 	 * @pdOid 66e84035-50b3-4485-9cfb-aa98be0d556b
 	 */
-	public void obrisiKorisnika(Korisnik k) {
+	public boolean obrisiKorisnika(Korisnik k) {
+		return false;
 		// TODO: implement
 	}
 
 	/** @pdOid fa14f2cc-e47b-42fb-abda-6cab97412c81 */
-	public void pretraziKorisnike() {
+	public boolean pretraziKorisnike() {
+		return false;
 		// TODO: implement
 	}
 
@@ -142,7 +215,8 @@ public class Aplikacija {
 	 * @param k
 	 * @pdOid 3526631a-5dbe-45f4-8199-2dae804c0b64
 	 */
-	public void dodajKlub(Klub k) {
+	public boolean dodajKlub(Klub k) {
+		return false;
 		// TODO: implement
 	}
 
@@ -150,12 +224,14 @@ public class Aplikacija {
 	 * @param k
 	 * @pdOid 887e7fe5-d9c2-493d-a69f-699b5c62cd4e
 	 */
-	public void obrisiKlub(Klub k) {
+	public boolean obrisiKlub(Klub k) {
+		return false;
 		// TODO: implement
 	}
 
 	/** @pdOid 7b1f5964-df01-4ac1-bdb1-4b71d3c437f7 */
-	public void pretraziKlubove() {
+	public boolean pretraziKlubove() {
+		return false;
 		// TODO: implement
 	}
 
@@ -163,7 +239,8 @@ public class Aplikacija {
 	 * @param d
 	 * @pdOid 152065d6-428d-4041-bb8e-03eb46df2d1e
 	 */
-	public void dodajDelegata(Delegat d) {
+	public boolean dodajDelegata(Delegat d) {
+		return false;
 		// TODO: implement
 	}
 
@@ -171,7 +248,8 @@ public class Aplikacija {
 	 * @param s
 	 * @pdOid 89382bc5-4e0c-4ed7-93cc-14dc57508d0f
 	 */
-	public void dodajSudiju(Sudija s) {
+	public boolean dodajSudiju(Sudija s) {
+		return false;
 		// TODO: implement
 	}
 
@@ -179,7 +257,8 @@ public class Aplikacija {
 	 * @param d
 	 * @pdOid 7ec9e2df-d12b-4cd3-bf55-46c8b0bea0b8
 	 */
-	public void izbrisiDelegata(Delegat d) {
+	public boolean izbrisiDelegata(Delegat d) {
+		return false;
 		// TODO: implement
 	}
 
@@ -187,17 +266,20 @@ public class Aplikacija {
 	 * @param s
 	 * @pdOid 14b98196-c464-416a-a955-6ae510b345e1
 	 */
-	public void izbrisiSudiju(Sudija s) {
+	public boolean izbrisiSudiju(Sudija s) {
+		return false;
 		// TODO: implement
 	}
 
 	/** @pdOid 7a39d6fa-741a-43f7-924c-69d5633dcfcb */
-	public void pretraziDelegate() {
+	public boolean pretraziDelegate() {
+		return false;
 		// TODO: implement
 	}
 
 	/** @pdOid dcbecf6e-45f4-49cc-8533-da48b599fdaf */
-	public void pretraziSudije() {
+	public boolean pretraziSudije() {
+		return false;
 		// TODO: implement
 	}
 
@@ -205,7 +287,8 @@ public class Aplikacija {
 	 * @param i
 	 * @pdOid d7246d41-d310-47f6-8408-f9a3aad60b9a
 	 */
-	public void dodajIgraca(Igrac i) {
+	public boolean dodajIgraca(Igrac i) {
+		return false;
 		// TODO: implement
 	}
 
@@ -213,12 +296,14 @@ public class Aplikacija {
 	 * @param i
 	 * @pdOid ce07564e-79de-40e4-a569-5fe1ba0b2536
 	 */
-	public void obrisiIgraca(Igrac i) {
+	public boolean obrisiIgraca(Igrac i) {
+		return false;
 		// TODO: implement
 	}
 
 	/** @pdOid b35966bc-de03-4ddf-836f-5d54321a7612 */
-	public void pretraziIgrace() {
+	public boolean pretraziIgrace() {
+		return false;
 		// TODO: implement
 	}
 
