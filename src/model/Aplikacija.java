@@ -105,7 +105,7 @@ public class Aplikacija {
 			ps.setString(1, h.getNaziv());
 			ResultSet rs = Database.st.executeQuery(brisanjeHale);
 			int delete = 0;
-			while(rs.next()){
+			while (rs.next()) {
 				delete++;
 			}
 			if (delete > 0) {
@@ -122,23 +122,22 @@ public class Aplikacija {
 	/** @pdOid ee579d3c-542e-4a19-9872-12f8f0d9b288 */
 	public boolean pretraziHale(Hala h) {
 		try {
-			ResultSet rs = Database.st.executeQuery("select * from hala where nazhal = '" + h.getNaziv() + "'" );
+			ResultSet rs = Database.st.executeQuery("select * from hala where nazhal = '" + h.getNaziv() + "'");
 			int count = 0;
-			while(rs.next()){
+			while (rs.next()) {
 				count++;
 			}
-			
-			if (count > 0 ){
+
+			if (count > 0) {
 				return true;
-			}else{
+			} else {
 				return false;
 			}
-			
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			return false;
 		}
-	
 
 	}
 
@@ -147,6 +146,7 @@ public class Aplikacija {
 	 * @pdOid 51aef23f-61d2-4dd6-bae2-5bb6cae2f3e7
 	 */
 	public boolean dodajUtakmicu(Utakmica u) {
+
 		return false;
 		// TODO: implement
 	}
@@ -192,8 +192,24 @@ public class Aplikacija {
 	 * @pdOid 4f83f05b-7fe9-43eb-b770-48a97e63489f
 	 */
 	public boolean dodajKorisnika(Korisnik k) {
-		return false;
-		// TODO: implement
+		try {
+			String unosKorisnika = "insert into korisnici(idk, ime, prz, username, pass) values ('K" + Database.count
+					+ "', '" + k.getOsoba().getIme() + "' , '" + k.getOsoba().getIme() + "', '" + k.getKorisnickoIme()
+					+ "', '" + k.getLozinka() + "')";
+			int insert;
+
+			insert = Database.st.executeUpdate(unosKorisnika);
+
+			if (insert > 0) {
+				Database.count += 1;
+				return true;
+			} else {
+				return false;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			return false;
+		}
 	}
 
 	/**
@@ -206,9 +222,23 @@ public class Aplikacija {
 	}
 
 	/** @pdOid fa14f2cc-e47b-42fb-abda-6cab97412c81 */
-	public boolean pretraziKorisnike() {
-		return false;
-		// TODO: implement
+	public boolean pretraziKorisnike(Korisnik k) {
+		try {
+			ResultSet rs = Database.st.executeQuery("select * from korisnici where username = '" + k.getKorisnickoIme() + "'");
+			int check  = 0;
+			while(rs.next()){
+				check++;
+			}
+			if(check >0){
+				return true;
+			}else{
+				return false;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			return false;
+		}
+		
 	}
 
 	/**
@@ -302,9 +332,23 @@ public class Aplikacija {
 	}
 
 	/** @pdOid b35966bc-de03-4ddf-836f-5d54321a7612 */
-	public boolean pretraziIgrace() {
-		return false;
-		// TODO: implement
+	public boolean pretraziIgrace(Igrac i) {
+		try {
+			ResultSet rs = Database.st.executeQuery("select * from igrac where ime = '" + i.getIme() + "' and prz = '" + i.getPrezime() + "'");
+			int count = 0;
+			while(rs.next()){
+				count++;
+			}
+			if(count > 0){
+				return true;
+			}else{
+				return false;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			return false;
+		}
+		
 	}
 
 	/** @pdGenerated default getter */
@@ -580,6 +624,18 @@ public class Aplikacija {
 	public void removeAllKorisnik() {
 		if (korisnik != null)
 			korisnik.clear();
+	}
+
+	public boolean dodajStatistikuUtakmice(StatistikaUtakmice su) {
+		return false;
+	}
+
+	public boolean obrisiStatistikuUtakmice(StatistikaUtakmice su) {
+		return false;
+	}
+
+	public boolean pretragaStatistikeUtakmice(StatistikaUtakmice su) {
+		return false;
 	}
 
 }

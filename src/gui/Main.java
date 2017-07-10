@@ -6,7 +6,10 @@ import java.sql.SQLException;
 import model.Aplikacija;
 import model.Database;
 import model.Hala;
+import model.Igrac;
+import model.Korisnik;
 import model.Mesto;
+import model.Osoba;
 
 public class Main {
 	
@@ -22,8 +25,7 @@ public class Main {
 		UserWindow uw= new UserWindow();
 		uw.setVisible(true);
 		
-	
-
+		
 	}
 
 }
