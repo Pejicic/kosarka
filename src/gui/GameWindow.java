@@ -28,6 +28,10 @@ public class GameWindow extends JFrame{
 	private JButton pos8;
 	private JButton pos9;
 	private JButton pos10;
+	
+	private JButton homeCoach;
+	private JButton guestCoach;
+	
 	private JPanel pan1;
 	
 	private JLabel home; 
@@ -75,44 +79,64 @@ public class GameWindow extends JFrame{
         setLayout(null);
         
         pos1 =new JButton("Igrac1");
+        pos1.setBackground(Color.white);
         pos1.setBounds(150, 100, 100, 50);
         add(pos1);
          
         pos2=new JButton("Igrac2");
+        pos2.setBackground(Color.white);
         pos2.setBounds(300, 200, 100, 50);
         add(pos2);
         
         pos3=new JButton("Igrac3");
+        pos3.setBackground(Color.white);
         pos3.setBounds(80, 350, 100, 50);
         add(pos3);
         
         pos4=new JButton("Igrac4");
+        pos4.setBackground(Color.white);
         pos4.setBounds(300, 500, 100, 50);
         add(pos4);
         
         pos5=new JButton("Igrac5");
+        pos5.setBackground(Color.white);
         pos5.setBounds(150, 600, 100, 50);
         add(pos5);
         
         pos6 =new JButton("Igrac6");
+        pos6.setBackground(Color.gray);
         pos6.setBounds(1100, 100, 100, 50);
         add(pos6);
          
         pos7=new JButton("Igrac7");
+        pos7.setBackground(Color.gray);
         pos7.setBounds(1000, 200, 100, 50);
         add(pos7);
         
         pos8=new JButton("Igrac8");
+        pos8.setBackground(Color.gray);
         pos8.setBounds(1200, 350, 100, 50);
         add(pos8);
         
         pos9=new JButton("Igrac9");
         pos9.setBounds(1000, 500, 100, 50);
+        pos9.setBackground(Color.gray);
         add(pos9);
         
         pos10=new JButton("Igrac10");
+        pos10.setBackground(Color.gray);
         pos10.setBounds(1100, 600, 100, 50);
         add(pos10);
+        
+        homeCoach=new JButton("Coach");
+        homeCoach.setBackground(Color.white);
+        homeCoach.setBounds(10, 10, 100, 50);
+        add(homeCoach);
+        
+        guestCoach=new JButton("Coach");
+        guestCoach.setBackground(Color.gray); 
+        guestCoach.setBounds(w-110, 10, 100, 50);
+        add(guestCoach);
         
         int sredina= w/2-200; // da bude iza crte
         home=new JLabel(u.getDomacin().getNazivKluba());

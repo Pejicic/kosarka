@@ -100,10 +100,10 @@ public class GamePanel extends JPanel {
 	}
 
 	private void initializeJugdes(Dimension dim, Box box) throws SQLException {
-		// TODO Auto-generated method stub
+	
 		// prikaz za izbor sudija
 		JPanel panSud1 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		judges1 = new JLabel("Judges 1: ");
+		judges1 = new JLabel("Judge 1: ");
 		judges1.setPreferredSize(dim);
 		sud1 = new JComboBox<String>();
 		sud1.setPreferredSize(dim);
@@ -151,7 +151,7 @@ public class GamePanel extends JPanel {
 		box.add(panSud1);
 
 		JPanel panSud2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		judges2 = new JLabel("Judges 2: ");
+		judges2 = new JLabel("Judge 2: ");
 		judges2.setPreferredSize(dim);
 		sud2 = new JComboBox<String>();
 		sud2.setPreferredSize(dim);
@@ -187,7 +187,7 @@ public class GamePanel extends JPanel {
 		box.add(panSud2);
 
 		JPanel panSud3 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		judges3 = new JLabel("Judges 3: ");
+		judges3 = new JLabel("Judge 3: ");
 		judges3.setPreferredSize(dim);
 		sud3 = new JComboBox<String>();
 		sud3.setPreferredSize(dim);
